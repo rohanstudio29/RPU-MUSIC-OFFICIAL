@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ne" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPU MUSIC OFFICIAL - Official Web App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #070709; 
+            color: #ffffff; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            overflow-x: hidden;
+        }
+        /* फ्युचरिस्टिक ग्लोइङ ब्याकग्राउन्ड लाइट */
+        .futuristic-glow {
+            position: relative;
+        }
+        .futuristic-glow::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, rgba(7, 7, 9, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(220, 38, 38, 0.6);
+            box-shadow: 0 15px 35px -10px rgba(220, 38, 38, 0.35);
+        }
+        .hero-gradient { 
+            background: linear-gradient(0deg, #070709 0%, rgba(7,7,9,0.5) 50%, rgba(7,7,9,0.9) 100%); 
+        }
+        .style-logo-rpu { 
+            font-family: 'Arial Black', sans-serif; 
+            letter-spacing: -1px; 
+        }
+    </style>
+</head>
+<body class="pb-24 select-none futuristic-glow">
+
+    <!-- Top Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md px-4 md:px-8 py-3 flex items-center justify-between border-b border-zinc-800/80">
+        <div class="flex items-center space-x-6">
+            <div class="text-center font-bold leading-tight cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <span class="text-2xl font-black text-red-600 block tracking-wider style-logo-rpu">RPU</span>
+                <span class="text-[10px] text-gray-300 tracking-[0.25em] block -mt-1 font-semibold">MUSIC</span>
+                <span class="text-[8px] text-red-500 tracking-[0.35em] block -mt-1 font-bold">OFFICIAL</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+                <a href="#releases" class="hover:text-white transition">Releases</a>
+                <a href="#about" class="hover:text-white transition">About Us</a>
+                <a href="#team" class="hover:text-white transition">Our Team</a>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <button onclick="triggerPwaInstall()" class="bg-red-600 px-4 py-1.5 rounded-full text-white text-xs font-bold hover:bg-red-700 transition flex items-center shadow-lg shadow-red-600/30">
+                <i class="fas fa-download mr-1.5"></i> Install App
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Spotlight Section -->
+    <div class="relative w-full h-[70vh] bg-cover bg-center mt-12" style="background-image: url('https://img.youtube.com/vi/TvjJ2nYePSk/maxresdefault.jpg');">
+        <div class="absolute inset-0 hero-gradient flex flex-col justify-end p-6 md:p-12 z-10">
+            <span class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 rounded-full w-max mb-3 tracking-wider shadow-lg shadow-red-600/50">🔥 LATEST RELEASE</span>
+            <h1 class="text-3xl md:text-5xl font-black mb-2">Timrai Maya | Official Video</h1>
+            <p class="text-gray-300 text-sm md:text-base max-w-xl mb-6">Roohan Thapa & Punam Thapa | Official Music Video 2026</p>
+            <div class="flex items-center space-x-3">
+                <button onclick="playMedia('TvjJ2nYePSk', 'Timrai Maya | Official Video', 'Roohan Thapa & Punam Thapa')" class="bg-white text-black font-bold px-6 py-3 rounded-lg flex items-center hover:bg-gray-200 transition shadow-xl">
+                    <i class="fas fa-play mr-2 text-red-600"></i> Play Track
+                </button>
+                <a href="https://www.youtube.com/watch?v=TvjJ2nYePSk" target="_blank" class="bg-zinc-900/90 text-white font-bold px-5 py-3 rounded-lg flex items-center hover:bg-zinc-800 transition border border-zinc-700 shadow-xl">
+                    <i class="fab fa-youtube mr-2 text-red-600 text-lg"></i> YouTube App
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div id="releases" class="px-6 md:px-12 mt-10 space-y-12 relative z-10">
+        
+        <!-- SECTION 1: LATEST RELEASES -->
+        <div>
+            <h2 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-3 flex items-center">
+                <span>🔥 Latest Releases</span>
+                <span class="ml-2 text-[10px] text-red-400 bg-red-950 px-2 py-0.5 rounded border border-red-800">2026</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('TvjJ2nYePSk', 'Timrai Maya | Official Video', 'Roohan Thapa & Punam Thapa')">
+                    <div class="relative">
+                        <img src="https://img.youtube.com/vi/TvjJ2nYePSk/hqdefault.jpg" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">5:02</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">Timrai Maya | Official Video</h3>
+                        <p class="text-xs text-gray-400 mt-1">Roohan Thapa & Punam Thapa</p>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('hQhosf-2DYw', 'AFSANA (अफसाना) Teaser', 'Roohan Thapa & Poonam Thapa')">
+                    <div class="relative">
+                        <img src="https://img.youtube.com/vi/hQhosf-2DYw/hqdefault.jpg" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">0:22</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">AFSANA (अफसाना) Teaser</h3>
+                        <p class="text-xs text-gray-400 mt-1">Roohan Thapa & Poonam Thapa</p>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('8gDlhCzh3y4', 'AAMA MERO SANSAR - आमा मेरो संसार', 'Poonam Thapa & Uliya Thapa')">
+                    <div class="relative">
+                        <img src="https://img.youtube.com/vi/8gDlhCzh3y4/hqdefault.jpg" class="w-full h-48 object-cover">
+                        <span class="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] px-1.5 py-0.5 rounded font-mono">5:25</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">AAMA MERO SANSAR - आमा मेरो संसार</h3>
+                        <p class="text-xs text-gray-400 mt-1">Poonam Thapa & Uliya Thapa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: OFFICIAL MUSIC VIDEOS -->
+        <div>
+            <h2 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-3">🎬 Official Music Videos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('TvjJ2nYePSk', 'Timrai Maya | Official Video', 'Roohan Thapa & Punam Thapa')">
+                    <img src="https://img.youtube.com/vi/TvjJ2nYePSk/hqdefault.jpg" class="w-full h-44 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">Timrai Maya</h3>
+                        <p class="text-xs text-gray-400 mt-1">5:02 • Official Music Video</p>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('VZKKHFN19Gw', 'EK BANJAARA | Official Music Video', 'Roohan Thapa & Punam Thapa')">
+                    <img src="https://img.youtube.com/vi/VZKKHFN19Gw/hqdefault.jpg" class="w-full h-44 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">EK BANJAARA</h3>
+                        <p class="text-xs text-gray-400 mt-1">5:31 • Official Music Video</p>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('8gDlhCzh3y4', 'AAMA MERO SANSAR - आमा मेरो संसार', 'Poonam Thapa & Uliya Thapa')">
+                    <img src="https://img.youtube.com/vi/8gDlhCzh3y4/hqdefault.jpg" class="w-full h-44 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">AAMA MERO SANSAR</h3>
+                        <p class="text-xs text-gray-400 mt-1">5:25 • Official Song</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: OFFICIAL TEASERS -->
+        <div>
+            <h2 class="text-xl font-bold mb-4 border-l-4 border-red-600 pl-3">⚡ Official Teasers & Promos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('hQhosf-2DYw', 'AFSANA (अफसाना) Teaser', 'Roohan Thapa & Poonam Thapa')">
+                    <img src="https://img.youtube.com/vi/hQhosf-2DYw/hqdefault.jpg" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">AFSANA (अफसाना) Teaser</h3>
+                        <p class="text-xs text-gray-400 mt-1">0:22 • Official Video Teaser</p>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden card-hover cursor-pointer border border-zinc-800" onclick="playMedia('3E195H5Pdnc', 'तिम्रो माया | Timro Maya Teaser', 'ROOHAN THAPA & PUNAM THAPA')">
+                    <img src="https://img.youtube.com/vi/3E195H5Pdnc/hqdefault.jpg" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-sm">तिम्रो माया | Timro Maya Teaser</h3>
+                        <p class="text-xs text-gray-400 mt-1">0:21 • Official Teaser</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ABOUT US -->
+        <div id="about" class="bg-zinc-900/60 backdrop-blur-md rounded-2xl p-6 md:p-10 border border-zinc-800/80 shadow-2xl">
+            <h2 class="text-2xl font-black mb-3 border-l-4 border-red-600 pl-3">About Us</h2>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                Welcome to <strong>RPU MUSIC OFFICIAL</strong> (@rpumusicofficial). We are an independent music label and creative studio producing high-quality Nepali music videos, teasers, and folk-modern storytelling across Nepal and the UAE.
+            </p>
+        </div>
+
+        <!-- SECTION 5: OUR TEAM (Clean Name & Post Only - Click for Modal Details) -->
+        <div id="team">
+            <h2 class="text-2xl font-black mb-1 border-l-4 border-red-600 pl-3">Our Team</h2>
+            <p class="text-xs text-gray-400 mb-6 pl-4">Click on any team member to view their full bio and details.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <!-- Member 1: Roohan Thapa -->
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden border border-zinc-800 text-center p-6 card-hover cursor-pointer" onclick="openMemberModal('rohan')">
+                    <img src="rohan.jpg" onerror="this.onerror=null; this.src='rohan.png';" class="w-28 h-28 mx-auto rounded-full object-cover object-top border-2 border-red-600 mb-4 shadow-lg">
+                    <h3 class="font-bold text-base text-white">Roohan Thapa</h3>
+                    <p class="text-xs text-red-500 font-semibold mt-1">Founder / Lead Artist</p>
+                </div>
+
+                <!-- Member 2: Ramesh Thapa -->
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden border border-zinc-800 text-center p-6 card-hover cursor-pointer" onclick="openMemberModal('ramesh')">
+                    <img src="WhatsApp Image 2026-10-10 at 10.54.12 AM.jpeg" onerror="this.onerror=null; this.src='ramesh.jpg';" class="w-28 h-28 mx-auto rounded-full object-cover object-top border-2 border-red-600 mb-4 shadow-lg">
+                    <h3 class="font-bold text-base text-white">Ramesh Thapa</h3>
+                    <p class="text-xs text-red-500 font-semibold mt-1">Director / Senior Advisor</p>
+                </div>
+
+                <!-- Member 3: Punam Thapa -->
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden border border-zinc-800 text-center p-6 card-hover cursor-pointer" onclick="openMemberModal('punam')">
+                    <img src="image.png_202609070910 (1).jpeg" onerror="this.onerror=null; this.src='image.png_202609070910 (1).png'; if(!this.complete) this.src='punam.jpg';" class="w-28 h-28 mx-auto rounded-full object-cover object-top border-2 border-red-600 mb-4 shadow-lg">
+                    <h3 class="font-bold text-base text-white">Punam Thapa</h3>
+                    <p class="text-xs text-red-500 font-semibold mt-1">Co-Founder / Lead Artist</p>
+                </div>
+
+                <!-- Member 4: Uliya Thapa -->
+                <div class="bg-zinc-900/80 backdrop-blur rounded-xl overflow-hidden border border-zinc-800 text-center p-6 card-hover cursor-pointer" onclick="openMemberModal('uliya')">
+                    <img src="ULIYA THAPA.jpg" onerror="this.onerror=null; this.src='uliya.jpg';" class="w-28 h-28 mx-auto rounded-full object-cover object-top border-2 border-red-600 mb-4 shadow-lg">
+                    <h3 class="font-bold text-base text-white">Uliya Thapa</h3>
+                    <p class="text-xs text-red-500 font-semibold mt-1">Featured Child Artist</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TEAM MEMBER PROFILE MODAL (Detailed Pop-up) -->
+    <div id="memberModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-lg bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-700 p-6 md:p-8 text-center shadow-2xl">
+            <button onclick="closeMemberModal()" class="absolute top-4 right-4 text-white text-xl bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-zinc-700">&times;</button>
+            <img id="memberModalImg" src="" class="w-32 h-32 mx-auto rounded-full object-cover object-top border-4 border-red-600 mb-4 shadow-xl">
+            <h2 id="memberModalName" class="text-2xl font-black mb-1 text-white">Member Name</h2>
+            <p id="memberModalRole" class="text-xs text-red-500 font-bold tracking-wider uppercase mb-4">Role Title</p>
+            <div class="bg-zinc-800/80 p-4 rounded-xl text-left border border-zinc-700/80 mb-6 space-y-3">
+                <div>
+                    <h4 class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Biography & Role</h4>
+                    <p id="memberModalBio" class="text-xs text-gray-200 leading-relaxed mt-1">Detailed Bio...</p>
+                </div>
+                <div>
+                    <h4 class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Key Contributions</h4>
+                    <p id="memberModalWorks" class="text-xs text-red-400 font-semibold mt-1">Featured Tracks...</p>
+                </div>
+            </div>
+            <button onclick="closeMemberModal()" class="w-full bg-red-600 text-white font-bold py-2.5 rounded-xl hover:bg-red-700 transition">Close Profile</button>
+        </div>
+    </div>
+
+    <!-- Media Player Modal -->
+    <div id="playerModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-xl bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-700 p-6 text-center shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-xl bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-zinc-700">&times;</button>
+            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl animate-pulse shadow-lg shadow-red-600/50">
+                <i class="fas fa-play"></i>
+            </div>
+            <h2 id="modalTitle" class="text-lg font-bold mb-1">Playing Track</h2>
+            <p id="modalArtist" class="text-xs text-gray-400 mb-6">Artist Name</p>
+            <div class="space-y-3">
+                <a id="modalYoutubeBtn" href="#" target="_blank" class="w-full bg-red-600 text-white font-bold py-3 rounded-xl flex items-center justify-center hover:bg-red-700 transition shadow-lg shadow-red-600/30">
+                    <i class="fab fa-youtube mr-2 text-xl"></i> Watch Video on YouTube App
+                </a>
+                <button onclick="closeModal()" class="w-full bg-zinc-800 text-gray-300 font-bold py-2.5 rounded-xl hover:bg-zinc-700">Close Player</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Install Modal -->
+    <div id="installModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-md bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-700 p-6 text-center shadow-2xl">
+            <button onclick="closeInstallModal()" class="absolute top-3 right-3 text-white text-xl bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center">&times;</button>
+            <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mx-auto mb-3 font-black text-lg shadow-lg shadow-red-600/50">RPU</div>
+            <h3 class="text-lg font-bold mb-2">Install RPU MUSIC OFFICIAL</h3>
+            <p class="text-xs text-gray-300 mb-4">Save to your mobile home screen to use it as a dedicated app:</p>
+            <div class="bg-zinc-800 p-3 rounded-xl text-left text-xs space-y-2 text-gray-300 mb-4 border border-zinc-700">
+                <p><strong>📱 Android (Chrome):</strong> Tap 3 dots (⋮) & select <b>"Add to Home Screen"</b>.</p>
+                <p><strong>🍎 iPhone (Safari):</strong> Tap Share button & select <b>"Add to Home Screen"</b>.</p>
+            </div>
+            <button onclick="closeInstallModal()" class="w-full bg-red-600 text-white font-bold py-2.5 rounded-xl">Got It!</button>
+        </div>
+    </div>
+
+    <script>
+        const teamData = {
+            rohan: { name: "Roohan Thapa", role: "Founder / Lead Artist", img: "rohan.jpg", fallback: "rohan.png", bio: "Founder, lead artist, and executive creator behind RPU MUSIC OFFICIAL. Spearheads overall production, singing, acting, and visual direction.", works: "Timrai Maya, EK BANJAARA, AFSANA" },
+            ramesh: { name: "Ramesh Thapa", role: "Director / Senior Advisor", img: "WhatsApp Image 2026-10-10 at 10.54.12 AM.jpeg", fallback: "ramesh.jpg", bio: "Senior Director and Strategic Cultural Advisor. Guides project direction, thematic authenticity, and overarching studio vision.", works: "Executive Guidance & Strategic Direction" },
+            punam: { name: "Punam Thapa", role: "Co-Founder / Lead Artist", img: "image.png_202609070910 (1).jpeg", fallback: "punam.jpg", bio: "Co-founder and lead female vocalist/actress. Featured across central RPU music video productions with vibrant vocal and screen presence.", works: "Timrai Maya, EK BANJAARA, AAMA MERO SANSAR, AFSANA" },
+            uliya: { name: "Uliya Thapa", role: "Featured Child Artist", img: "ULIYA THAPA.jpg", fallback: "uliya.jpg", bio: "Special young featured artist representing emotional storytelling and family bonds across official RPU musical visual projects.", works: "AAMA MERO SANSAR (Special Lead Child Role)" }
+        };
+
+        function openMemberModal(key) {
+            const m = teamData[key];
+            if (!m) return;
+            const modalImg = document.getElementById('memberModalImg');
+            modalImg.onerror = function() { this.onerror = null; this.src = m.fallback || 'rohan.jpg'; };
+            modalImg.src = m.img;
+            document.getElementById('memberModalName').innerText = m.name;
+            document.getElementById('memberModalRole').innerText = m.role;
+            document.getElementById('memberModalBio').innerText = m.bio;
+            document.getElementById('memberModalWorks').innerText = m.works;
+            document.getElementById('memberModal').classList.remove('hidden');
+        }
+
+        function closeMemberModal() { document.getElementById('memberModal').classList.add('hidden'); }
+
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferredPrompt = e; });
+        function triggerPwaInstall() {
+            if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then(() => { deferredPrompt = null; }); } 
+            else { document.getElementById('installModal').classList.remove('hidden'); }
+        }
+        function closeInstallModal() { document.getElementById('installModal').classList.add('hidden'); }
+
+        function playMedia(id, title, artist) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalArtist').innerText = artist;
+            document.getElementById('modalYoutubeBtn').href = 'https://www.youtube.com/watch?v=' + id;
+            document.getElementById('playerModal').classList.remove('hidden');
+        }
+
+        function closeModal() { document.getElementById('playerModal').classList.add('hidden'); }
+    </script>
+</body>
+</html>
